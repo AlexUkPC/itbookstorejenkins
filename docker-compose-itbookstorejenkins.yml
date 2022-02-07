@@ -1,0 +1,37 @@
+version: "3" 
+services:
+  web_itbookstorejenkins:
+    image: alexrogna/itbookstorejenkins_web:prod
+    expose:
+      - 3000
+    env_file:
+      - .env/production/database_itbookstorejenkins
+      - .env/production/web_itbookstorejenkins
+    environment:
+      - VIRTUAL_HOST=itbookstorejenkins.alexrogna.com
+      - VIRTUAL_PORT=3000
+      - LETSENCRYPT_HOST=itbookstorejenkins.alexrogna.com
+    networks:
+      - proxy
+    restart: always
+
+  database_itbookstorejenkins:
+    image: postgres
+    env_file:
+      - .env/production/database_itbookstorejenkins
+    volumes:
+      - db_data_itbookstorejenkins:/var/lib/postgresql/data
+    networks:
+      - proxy
+    restart: always
+    
+  db-migrator_itbookstorejenkins:
+    image: alexrogna/itbookstorejenkins_web:prod
+    command: ["./wait-for", "--timeout=300", "database_itbookstorejenkins:5432", "--", "bin/rails", "db:create" , "db:migrate"]
+    env_file:
+      - .env/production/database_itbookstorejenkins
+      - .env/production/web_itbookstorejenkins
+volumes:
+  db_data_itbookstorejenkins:
+networks:
+  proxy:
