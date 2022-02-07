@@ -8,14 +8,19 @@ pipeline {
         string(name: 'REF', defaultValue: '\${ghprbActualCommit}', description: 'Commit to build')
     }
     stages {
+        stage('Check ruby version') {
+            steps {
+                sh 'ruby -v'
+            }   
+        } 
         stage('Create db') {
             steps {
-                bash 'bin/rails db:create'
+                sh './bin/rails db:create'
             }   
         } 
         stage('Test') {
             steps {
-                bash 'bin/rails test:models'
+                sh './bin/rails test:models'
             }   
         } 
     }
