@@ -25,7 +25,7 @@ pipeline {
         } 
         stage('bundle') {
             steps {
-                sh 'itbookstorejenkins/bin/rails bundle install'
+                sh 'bundle install'
             }   
         } 
         stage('Create db') {
