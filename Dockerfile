@@ -9,7 +9,7 @@ RUN apt-get update -yqq && apt-get install -yqq --no-install-recommends nodejs y
 ARG USER_ID
 ARG GROUP_ID
 
-RUN addgroup --gid $GROUP_ID user
+#RUN addgroup --gid $GROUP_ID user
 #RUN adduser --disabled-password --gecos '' --uid $USER_ID --gid $GROUP_ID user
 
 ENV INSTALL_PATH /opt/app/
