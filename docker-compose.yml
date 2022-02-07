@@ -9,7 +9,7 @@ services:
     ports:
       - "3029:3000"
     volumes: 
-      - ./itbookstorejenkins:/opt/app
+      - .:/opt/app
       - gem_cache_itbookstorejenkins:/gems
     env_file: 
       - .env/development/database_itbookstorejenkins
@@ -28,7 +28,7 @@ services:
     ports: 
       - "3063:3063"
     volumes: 
-      - ./itbookstorejenkins:/opt/app
+      - .:/opt/app
       - gem_cache_itbookstorejenkins:/gems
     env_file: 
       - .env/development/database_itbookstorejenkins
