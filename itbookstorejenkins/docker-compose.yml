@@ -1,0 +1,52 @@
+version: "3"
+services:
+  web_itbookstorejenkins:
+    build:
+      context: .
+      args:
+        USER_ID: "${USER_ID:-1000}"
+        GROUP_ID: "${GROUP_ID:-1000}"
+    ports:
+      - "3029:3000"
+    volumes: 
+      - ./itbookstorejenkins:/opt/app
+      - gem_cache_itbookstorejenkins:/gems
+    env_file: 
+      - .env/development/database_itbookstorejenkins
+      - .env/development/web_itbookstorejenkins
+    environment: 
+      - WEBPACKER_DEV_SERVER_HOST=webpack_dev_server_itbookstorejenkins
+    networks:
+      - network
+  webpack_dev_server_itbookstorejenkins:
+    build:
+      context: .
+      args:
+        USER_ID: "${USER_ID:-1000}"
+        GROUP_ID: "${GROUP_ID:-1000}"
+    command: ./bin/webpack-dev-server
+    ports: 
+      - "3063:3063"
+    volumes: 
+      - ./itbookstorejenkins:/opt/app
+      - gem_cache_itbookstorejenkins:/gems
+    env_file: 
+      - .env/development/database_itbookstorejenkins
+      - .env/development/web_itbookstorejenkins
+    environment: 
+      - WEBPACKER_DEV_SERVER_HOST=0.0.0.0
+    networks:
+      - network
+  database_itbookstorejenkins:
+    image: postgres
+    env_file: 
+      - .env/development/database_itbookstorejenkins
+    volumes: 
+      - db_data_itbookstorejenkins:/var/lib/postgresql/data
+    networks:
+      - network
+volumes: 
+  db_data_itbookstorejenkins:
+  gem_cache_itbookstorejenkins:
+networks:
+  network:
