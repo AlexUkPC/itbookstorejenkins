@@ -15,22 +15,22 @@ pipeline {
         } 
         stage('Check directories') {
             steps {
-                sh 'ls -l'
+                sh 'ls itbookstorejenkins -l'
             }   
         } 
         stage('Check files in bin') {
             steps {
-                sh 'ls bin -l'
+                sh 'ls itbookstorejenkins/bin -l'
             }   
         } 
         stage('Create db') {
             steps {
-                sh './bin/rails db:create'
+                sh 'itbookstorejenkins/bin/rails db:create'
             }   
         } 
         stage('Test') {
             steps {
-                sh './bin/rails test:models'
+                sh 'itbookstorejenkins/bin/rails test:models'
             }   
         } 
     }
