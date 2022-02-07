@@ -13,7 +13,7 @@ pipeline {
                 sh 'bin/rails db:create'
             }   
         } 
-        stage('Db create') {
+        stage('test') {
             steps {
                 sh 'bin/rails test:models'
             }   
