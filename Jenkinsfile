@@ -23,6 +23,11 @@ pipeline {
                 sh 'ls itbookstorejenkins/bin -l'
             }   
         } 
+        stage('bundle') {
+            steps {
+                sh 'itbookstorejenkins/bin/rails bundle install'
+            }   
+        } 
         stage('Create db') {
             steps {
                 sh 'itbookstorejenkins/bin/rails db:create'
