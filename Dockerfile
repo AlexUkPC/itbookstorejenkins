@@ -10,7 +10,7 @@ ARG USER_ID
 ARG GROUP_ID
 
 RUN addgroup --gid $GROUP_ID user
-RUN adduser --disabled-password --gecos '' --uid $USER_ID --gid $GROUP_ID user
+RUN adduser --disabled-password --gecos '' --uid 1000 --gid 1000 user
 
 ENV INSTALL_PATH /opt/app/
 RUN mkdir -p $INSTALL_PATH
