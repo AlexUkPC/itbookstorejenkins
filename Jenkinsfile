@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        docker-compose {
+        dockerfile {
             label 'ssh'
       }   
     }
