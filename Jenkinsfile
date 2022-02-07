@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('Compile') {
             steps {
-                sh 'ruby -v'
+                sh 'bin/rails test:models'
             }   
         } 
     }
