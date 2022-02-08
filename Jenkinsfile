@@ -11,6 +11,11 @@ pipeline {
         //         sh '/usr/local/bin/docker-compose run --rm web_itbookstorejenkins bin/rails webpacker:install'
         //     }
         // }
+        stage('Webpacker Install check') {
+            steps {
+                sh '/usr/local/bin/docker-compose run --rm web_itbookstorejenkins bin/rails webpacker:verify_install'
+            }
+        }
         stage('Build') {
             steps {
                 sh '/usr/local/bin/docker-compose stop'
