@@ -26,7 +26,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh '/usr/local/bin/docker-compose stop'
-                sh '/usr/local/bin/docker-compose up -d'
+                sh '/usr/local/bin/docker-compose up -d --build'
                 timeout(120) {
                     waitUntil {
                         script {
