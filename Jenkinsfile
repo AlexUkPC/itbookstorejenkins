@@ -11,7 +11,7 @@ pipeline {
                 sh '/usr/local/bin/docker-compose run --rm web_itbookstorejenkins bin/rails webpacker:install'
             }
         }
-        stage('Webpacker Install') {
+        stage('Build') {
             steps {
                 sh '/usr/local/bin/docker-compose up'
             }
