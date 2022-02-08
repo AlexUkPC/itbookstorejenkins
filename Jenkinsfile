@@ -15,10 +15,6 @@ pipeline {
             steps {
                 sh '/usr/local/bin/docker-compose stop'
                 sh '/usr/local/bin/docker-compose up -d'
-            }
-        }
-        stage('wait'){
-            timeout(120) {
                 waitUntil {
                     sh 'wget --retry-connrefused --tries=120 --waitretry=1 -q http://localhost:3029 -O /dev/null'
                 }
