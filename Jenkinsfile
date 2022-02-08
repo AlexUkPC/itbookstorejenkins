@@ -11,6 +11,11 @@ pipeline {
                 sh '/usr/local/bin/docker-compose run --rm web_itbookstorejenkins bin/rails webpacker:install'
             }
         }
+        stage('Webpacker Install') {
+            steps {
+                sh '/usr/local/bin/docker-compose up'
+            }
+        }
         // stage('Db create') {
         //     steps {
         //         sh 'bin/rails db:create'
