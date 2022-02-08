@@ -151,3 +151,97 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.3ms | Allocations: 2053)
 
 
+Started GET "/users" for 192.168.224.1 at 2022-02-08 09:05:14 +0000
+Cannot render console from 192.168.224.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.5ms | Allocations: 207)
+  Rendered users/index.html.erb within layouts/application (Duration: 12.6ms | Allocations: 6100)
+  Rendered layout layouts/application.html.erb (Duration: 45.4ms | Allocations: 26056)
+Completed 200 OK in 53ms (Views: 44.2ms | ActiveRecord: 3.3ms | Allocations: 31281)
+
+
+Started GET "/users" for 192.168.224.1 at 2022-02-08 09:05:17 +0000
+Cannot render console from 192.168.224.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered users/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 791)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 1735)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.3ms | Allocations: 2022)
+
+
+Started GET "/users" for 192.168.224.1 at 2022-02-08 09:05:19 +0000
+Cannot render console from 192.168.224.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered users/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 783)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 1727)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.3ms | Allocations: 2013)
+
+
+Started GET "/" for 192.168.224.1 at 2022-02-08 09:05:26 +0000
+Cannot render console from 192.168.224.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered users/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 775)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 1717)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.3ms | Allocations: 1994)
+
+
+Started GET "/" for 192.168.224.1 at 2022-02-08 09:05:34 +0000
+Cannot render console from 192.168.224.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.5ms | Allocations: 207)
+  Rendered users/index.html.erb within layouts/application (Duration: 12.1ms | Allocations: 6100)
+  Rendered layout layouts/application.html.erb (Duration: 43.3ms | Allocations: 25421)
+Completed 200 OK in 51ms (Views: 42.6ms | ActiveRecord: 2.9ms | Allocations: 30646)
+
+
+Started GET "/" for 192.168.224.1 at 2022-02-08 09:05:44 +0000
+Cannot render console from 192.168.224.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.5ms | Allocations: 207)
+  Rendered users/index.html.erb within layouts/application (Duration: 12.3ms | Allocations: 6100)
+  Rendered layout layouts/application.html.erb (Duration: 41.4ms | Allocations: 25759)
+Completed 200 OK in 49ms (Views: 40.5ms | ActiveRecord: 3.0ms | Allocations: 30984)
+
+
+Started GET "/" for 192.168.224.1 at 2022-02-08 09:05:47 +0000
+Cannot render console from 192.168.224.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered users/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 791)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 1735)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.3ms | Allocations: 2022)
+
+

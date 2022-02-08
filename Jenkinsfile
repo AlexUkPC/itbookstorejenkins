@@ -16,6 +16,9 @@ pipeline {
                 sh '/usr/local/bin/docker-compose up -d'
             }
         }
+        waitUntil {
+            sh 'wget --retry-connrefused --tries=120 --waitretry=1 -q http://localhost:3029 -O /dev/null'
+        }
         // stage('Db create') {
         //     steps {
         //         sh 'bin/rails db:create'
