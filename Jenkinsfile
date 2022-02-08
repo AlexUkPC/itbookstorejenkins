@@ -15,7 +15,7 @@ pipeline {
             steps {
                 script {
                     try {
-                        sh '/usr/local/bin/docker-compose run --rm web_itbookstorejenkins bin/rails webpacker:verify_install')
+                        sh '/usr/local/bin/docker-compose run --rm web_itbookstorejenkins bin/rails webpacker:verify_install'
                     } 
                     catch (exception) {
                         echo "Not OK"
