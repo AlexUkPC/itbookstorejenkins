@@ -15,14 +15,7 @@ pipeline {
             steps {
                 sh '/usr/local/bin/docker-compose stop'
                 sh '/usr/local/bin/docker-compose up -d'
-                timeout(50) {
-                    waitUntil {
-                        script {
-                            def r = sh script: 'wget -q http://localhost:3029 -O /dev/null', returnStdout: true
-                            return (r == 0);
-                        }
-                    }
-                }
+                timeout(50){}
             }
         }
         // stage('Db create') {
