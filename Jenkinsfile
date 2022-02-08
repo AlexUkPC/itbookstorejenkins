@@ -13,10 +13,12 @@ pipeline {
         // }
         stage('Webpacker Install check') {
             steps {
-                if (sh '/usr/local/bin/docker-compose run --rm web_itbookstorejenkins bin/rails webpacker:verify_install'){
-                    echo "OK"
-                } else {
-                    echo "Not OK"
+                script {
+                    if (sh '/usr/local/bin/docker-compose run --rm web_itbookstorejenkins bin/rails webpacker:verify_install'){
+                        echo "OK"
+                    } else {
+                        echo "Not OK"
+                    }
                 }
             }
         }
