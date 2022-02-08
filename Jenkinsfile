@@ -15,8 +15,13 @@ pipeline {
             steps {
                 sh '/usr/local/bin/docker-compose stop'
                 sh '/usr/local/bin/docker-compose up -d'
-                waitUntil {
-                    sh 'wget http://localhost:3029'
+                timeout(5) {
+                    waitUntil {
+                        script {
+                            def r = sh script: 'wget -q http://localhost:3029 -O /dev/null', returnStdout: true
+                            return (r == 0);
+                        }
+                    }
                 }
             }
         }

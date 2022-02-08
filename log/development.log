@@ -245,3 +245,107 @@ Processing by UsersController#index as */*
 Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.3ms | Allocations: 2022)
 
 
+Started GET "/" for 192.168.224.1 at 2022-02-08 09:31:51 +0000
+Cannot render console from 192.168.224.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered users/index.html.erb within layouts/application (Duration: 10.6ms | Allocations: 3048)
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | Allocations: 3992)
+Completed 200 OK in 13ms (Views: 12.2ms | ActiveRecord: 4.8ms | Allocations: 4278)
+
+
+Started GET "/" for 192.168.224.1 at 2022-02-08 09:32:01 +0000
+Cannot render console from 192.168.224.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered users/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 775)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 1717)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.3ms | Allocations: 1994)
+
+
+Started GET "/" for 192.168.224.1 at 2022-02-08 09:32:06 +0000
+Cannot render console from 192.168.224.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered users/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 775)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 1717)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.3ms | Allocations: 1994)
+
+
+Started GET "/" for 192.168.224.1 at 2022-02-08 09:32:07 +0000
+Cannot render console from 192.168.224.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered users/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 783)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 1727)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.3ms | Allocations: 2013)
+
+
+Started GET "/" for 192.168.224.1 at 2022-02-08 09:32:14 +0000
+Cannot render console from 192.168.224.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered users/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 783)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 1727)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.3ms | Allocations: 2013)
+
+
+Started GET "/" for 192.168.224.1 at 2022-02-08 09:32:16 +0000
+Cannot render console from 192.168.224.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered users/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 775)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 1717)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.3ms | Allocations: 1994)
+
+
+Started GET "/" for 192.168.224.1 at 2022-02-08 09:32:52 +0000
+Cannot render console from 192.168.224.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered users/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 775)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 1717)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.3ms | Allocations: 1994)
+
+
+Started GET "/" for 192.168.224.1 at 2022-02-08 09:33:17 +0000
+Cannot render console from 192.168.224.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered users/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 775)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 1717)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.3ms | Allocations: 1994)
+
+
