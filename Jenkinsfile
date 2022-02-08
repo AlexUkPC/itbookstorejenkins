@@ -14,8 +14,6 @@ pipeline {
         stage('Build') {
             steps {
                 sh '/usr/local/bin/docker-compose up -d'
-            }
-            steps {
                 sh 'wget --retry-connrefused --tries=120 --waitretry=1 -q http://localhost:3029 -O /dev/null'
             }
         }
