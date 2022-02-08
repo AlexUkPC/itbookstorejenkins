@@ -1,17 +1,65 @@
 pipeline {
     agent {
-        dockerfile {
-            label 'ssh'
-      }   
+        label 'ssh'  
     }
     parameters {
         string(name: 'REF', defaultValue: '\${ghprbActualCommit}', description: 'Commit to build')
     }
     stages {
-        stage('Compile') {
+        // stage('Webpacker Install') {
+        //     steps {
+        //         sh '/usr/local/bin/docker-compose run --rm web_itbookstorejenkins bin/rails webpacker:install'
+        //     }
+        // }
+        stage('Webpacker Install check') {
             steps {
-                sh 'ruby -v'
+                script {
+                    try {
+                        sh '/usr/local/bin/docker-compose run --rm web_itbookstorejenkins bin/rails webpacker:verify_install'
+                        echo "ok"
+                    } 
+                    catch (exception) {
+                        sh '/usr/local/bin/docker-compose run --rm web_itbookstorejenkins bin/rails webpacker:install'
+                        echo "not ok"
+                    }
+                }
+            }
+        }
+        stage('Build') {
+            steps {
+                sh '/usr/local/bin/docker-compose stop'
+                sh '/usr/local/bin/docker-compose up -d'
+                sh '/usr/local/bin/docker-compose exec -T --user "$(id -u):$(id -g)" web_itbookstorejenkins bin/rails db:create'
+                sh '/usr/local/bin/docker-compose exec -T --user "$(id -u):$(id -g)" web_itbookstorejenkins bin/rails db:migrate'
+                timeout(120) {
+                    waitUntil {
+                        script {
+                            try {
+                                def response = httpRequest 'http://0.0.0.0:3029'
+                                return (response.status == 200)
+                            }
+                            catch (exception) {
+                                return false
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        // stage('Db create') {
+        //     steps {
+        //         sh 'bin/rails db:create'
+        //     }   
+        // } 
+        stage('test') {
+            steps {
+                sh '/usr/local/bin/docker-compose exec -T --user "$(id -u):$(id -g)" web_itbookstorejenkins bin/rails test:models'
             }   
         } 
+        // stage('Stop server') {
+        //     steps {
+        //         sh '/usr/local/bin/docker-compose stop'
+        //     }
+        // }
     }
 }

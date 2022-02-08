@@ -9,8 +9,8 @@ RUN apt-get update -yqq && apt-get install -yqq --no-install-recommends nodejs y
 ARG USER_ID
 ARG GROUP_ID
 
-RUN addgroup --gid $GROUP_ID user
-RUN adduser --disabled-password --gecos '' --uid $USER_ID --gid $GROUP_ID user
+RUN addgroup --gid 1000 user
+RUN adduser --disabled-password --gecos '' --uid 1000 --gid 1000 user
 
 ENV INSTALL_PATH /opt/app/
 RUN mkdir -p $INSTALL_PATH
@@ -22,6 +22,7 @@ RUN bundle install
 COPY . $INSTALL_PATH
 
 RUN chown -R user:user $INSTALL_PATH
+RUN ["chmod", "+x", "/opt/app/wait-for"]
 #USER $USER_ID
 ENTRYPOINT [ "./docker-entrypoint.sh" ]
 CMD [ "bin/rails", "s", "-b", "0.0.0.0" ]
