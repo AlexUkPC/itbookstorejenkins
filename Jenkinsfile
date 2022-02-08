@@ -56,10 +56,10 @@ pipeline {
                 sh '/usr/local/bin/docker-compose exec -T --user "$(id -u):$(id -g)" web_itbookstorejenkins bin/rails test:models'
             }   
         } 
-        stage('Stop server') {
-            steps {
-                sh '/usr/local/bin/docker-compose stop'
-            }
-        }
+        // stage('Stop server') {
+        //     steps {
+        //         sh '/usr/local/bin/docker-compose stop'
+        //     }
+        // }
     }
 }
