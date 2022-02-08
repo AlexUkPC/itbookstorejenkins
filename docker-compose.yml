@@ -45,16 +45,6 @@ services:
       - db_data_itbookstorejenkins:/var/lib/postgresql/data
     networks:
       - network
-  db-migrator_itbookstorejenkins:
-    build:
-      context: .
-      args:
-        USER_ID: "${USER_ID:-1000}"
-        GROUP_ID: "${GROUP_ID:-1000}"
-    command: ["./wait-for", "--timeout=300", "database_itbookstorejenkins:5432", "--", "bin/rails", "db:create" , "db:migrate"]
-    env_file:
-      - .env/development/database_itbookstorejenkins
-      - .env/development/web_itbookstorejenkins
 volumes: 
   db_data_itbookstorejenkins:
   gem_cache_itbookstorejenkins:
