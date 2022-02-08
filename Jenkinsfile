@@ -13,7 +13,7 @@ pipeline {
         // }
         stage('list') {
             steps {
-                sh 'ls /bin/'
+                sh 'ls /usr/'
             }
         }
         stage('Webpacker Install check') {
