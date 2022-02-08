@@ -15,7 +15,7 @@ pipeline {
             steps {
                 sh '/usr/local/bin/docker-compose stop'
                 sh '/usr/local/bin/docker-compose up -d'
-                timeout(5) {
+                timeout(50) {
                     waitUntil {
                         script {
                             def r = sh script: 'wget -q http://localhost:3029 -O /dev/null', returnStdout: true
