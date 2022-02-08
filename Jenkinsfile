@@ -28,7 +28,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh '/usr/local/bin/docker-compose stop'
-                sh '/usr/local/bin/docker-compose up -d --build'
+                sh '/usr/local/bin/docker-compose up -d'
                 sh '/usr/local/bin/docker-compose exec -T --user "$(id -u):$(id -g)" web_itbookstorejenkins bin/rails db:create'
                 sh '/usr/local/bin/docker-compose exec -T --user "$(id -u):$(id -g)" web_itbookstorejenkins bin/rails db:migrate'
                 timeout(120) {
