@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label 'ssh'  
+        label 'inbound'  
     }
     parameters {
         string(name: 'REF', defaultValue: '\${ghprbActualCommit}', description: 'Commit to build')
