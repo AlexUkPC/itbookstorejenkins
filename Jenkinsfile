@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh '/usr/local/bin/docker-compose up'
+                sh '/usr/local/bin/docker-compose up -d'
             }
         }
         // stage('Db create') {
@@ -21,10 +21,10 @@ pipeline {
         //         sh 'bin/rails db:create'
         //     }   
         // } 
-        // stage('test') {
-        //     steps {
-        //         sh 'bin/rails test:models'
-        //     }   
-        // } 
+        stage('test') {
+            steps {
+                sh '/usr/local/bin/docker-compose exec --user "$(id -u):$(id -g)" web_itbookstorejenkins bin/rails test:models'
+            }   
+        } 
     }
 }
