@@ -19,7 +19,7 @@ pipeline {
                     waitUntil {
                         script {
                             try {
-                                def response = httpRequest 'http://localhost:3029'
+                                def response = httpRequest 'http://localhost:3029/users'
                                 return (response.status == 200)
                             }
                             catch (exception) {
